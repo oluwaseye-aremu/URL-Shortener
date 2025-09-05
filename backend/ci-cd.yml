@@ -1,0 +1,202 @@
+Last login: Fri Sep  5 11:38:45 on console
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+SayXchangeMacBook:~ user$ docker ps
+CONTAINER ID   IMAGE           COMMAND                  CREATED        STATUS              PORTS                                             NAMES
+c395f5bb657d   mongo:latest    "docker-entrypoint.s…"   21 hours ago   Up About a minute   27017/tcp                                         strange_goldberg
+9f000221916f   mongo:latest    "docker-entrypoint.s…"   21 hours ago   Up About a minute   27017/tcp                                         reverent_cartwright
+4115e0ad87eb   mongo-express   "/sbin/tini -- /dock…"   21 hours ago   Up 2 minutes        0.0.0.0:8081->8081/tcp, [::]:8081->8081/tcp       mongo-express
+1f5ecb2ef853   mongo           "docker-entrypoint.s…"   21 hours ago   Up About a minute   0.0.0.0:27017->27017/tcp, [::]:27017->27017/tcp   mongodb
+SayXchangeMacBook:~ user$ docker ps
+CONTAINER ID   IMAGE           COMMAND                  CREATED        STATUS          PORTS                                             NAMES
+4115e0ad87eb   mongo-express   "/sbin/tini -- /dock…"   21 hours ago   Up 28 seconds   0.0.0.0:8081->8081/tcp, [::]:8081->8081/tcp       mongo-express
+1f5ecb2ef853   mongo           "docker-entrypoint.s…"   21 hours ago   Up 27 seconds   0.0.0.0:27017->27017/tcp, [::]:27017->27017/tcp   mongodb
+SayXchangeMacBook:~ user$ ls
+--name		Downloads	booking-app	hacker.log	simple-js-app
+--net		Library		books		hub-test	vscode-folder
+-e		Local Sites	caddy-lab	main.go		worldbanc
+-p		Movies		dockerfile	main.py
+Applications	Music		flyx		mongo-express
+Desktop		Pictures	go		myenv
+Documents	Public		go.mod		seye
+SayXchangeMacBook:~ user$ cd simple-js-app
+SayXchangeMacBook:simple-js-app user$ ls
+SayXchangeMacBook:simple-js-app user$ ls -a
+.	..
+SayXchangeMacBook:simple-js-app user$ docker network ls
+NETWORK ID     NAME                    DRIVER    SCOPE
+ba6c921d68a2   bridge                  bridge    local
+b89a6161d84d   caddytest               bridge    local
+14d56e572c54   host                    host      local
+7776a32b5922   mongo-network           bridge    local
+df28df7eecfb   none                    null      local
+3fbe77176648   url-shortener_default   bridge    local
+SayXchangeMacBook:simple-js-app user$ docker ps
+CONTAINER ID   IMAGE               COMMAND                  CREATED          STATUS                    PORTS                                             NAMES
+ef183137405b   url-shortener-app   "docker-entrypoint.s…"   27 minutes ago   Up 27 minutes             0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp       url-shortener-app-1
+52ce2afa40fe   mongo:6             "docker-entrypoint.s…"   27 minutes ago   Up 27 minutes (healthy)   0.0.0.0:27017->27017/tcp, [::]:27017->27017/tcp   url-shortener-mongo-1
+SayXchangeMacBook:simple-js-app user$ docker-compose logs app
+no configuration file provided: not found
+SayXchangeMacBook:simple-js-app user$ docker-compose logs app
+no configuration file provided: not found
+SayXchangeMacBook:simple-js-app user$ docker-compose logs url-shortener-app-1
+no configuration file provided: not found
+SayXchangeMacBook:simple-js-app user$ docker ps -a
+CONTAINER ID   IMAGE                      COMMAND                  CREATED          STATUS                          PORTS                                             NAMES
+0afb4d2a7b71   url-shortener-app:latest   "docker-entrypoint.s…"   2 minutes ago    Exited (1) About a minute ago                                                     upbeat_ellis
+5b984e944899   url-shortener-app          "docker-entrypoint.s…"   2 minutes ago    Restarting (1) 3 seconds ago                                                      url-shortener-app-1
+52ce2afa40fe   mongo:6                    "docker-entrypoint.s…"   38 minutes ago   Up 2 minutes (healthy)          0.0.0.0:27017->27017/tcp, [::]:27017->27017/tcp   url-shortener-mongo-1
+28078634e203   todo-app                   "docker-entrypoint.s…"   15 hours ago     Exited (137) 15 hours ago                                                         hopeful_shamir
+fd949e7e043c   todo-app                   "docker-entrypoint.s…"   15 hours ago     Created                                                                           hungry_banach
+c395f5bb657d   mongo:latest               "docker-entrypoint.s…"   24 hours ago     Exited (0) 2 hours ago                                                            strange_goldberg
+9f000221916f   mongo:latest               "docker-entrypoint.s…"   24 hours ago     Exited (0) 2 hours ago                                                            reverent_cartwright
+4115e0ad87eb   mongo-express              "/sbin/tini -- /dock…"   24 hours ago     Exited (143) 2 hours ago                                                          mongo-express
+1f5ecb2ef853   mongo                      "docker-entrypoint.s…"   24 hours ago     Exited (0) 2 hours ago                                                            mongodb
+e6d1187e9266   goserver:latest            "/bin/goserver"          2 days ago       Exited (255) 2 days ago                                                           zen_clarke
+SayXchangeMacBook:simple-js-app user$ docker-compose logs app
+no configuration file provided: not found
+SayXchangeMacBook:simple-js-app user$ docker-compose logs 5b984e944899
+no configuration file provided: not found
+SayXchangeMacBook:simple-js-app user$ cd ~
+SayXchangeMacBook:~ user$ ls
+--name		Documents	Pictures	flyx		main.py		worldbanc
+--net		Downloads	Public		go		mongo-express
+-e		Library		booking-app	go.mod		myenv
+-p		Local Sites	books		hacker.log	seye
+Applications	Movies		caddy-lab	hub-test	simple-js-app
+Desktop		Music		dockerfile	main.go		vscode-folder
+SayXchangeMacBook:~ user$ cd documents
+SayXchangeMacBook:documents user$ cd url-shortener
+SayXchangeMacBook:url-shortener user$ ls
+README.md		backend			docker-compose.yml
+SayXchangeMacBook:url-shortener user$ ls -a
+.			.git			README.md		docker-compose.yml
+..			.vscode			backend
+SayXchangeMacBook:url-shortener user$ cd .git
+SayXchangeMacBook:.git user$ mkdir workflow
+SayXchangeMacBook:.git user$ ls
+COMMIT_EDITMSG	config		index		objects		workflow
+HEAD		description	info		packed-refs
+branches	hooks		logs		refs
+SayXchangeMacBook:.git user$ cd workflow
+SayXchangeMacBook:workflow user$ touch ci/cd.yml
+touch: ci/cd.yml: No such file or directory
+SayXchangeMacBook:workflow user$ ls
+SayXchangeMacBook:workflow user$ touch ci-cd.yml
+SayXchangeMacBook:workflow user$ ls
+ci-cd.yml
+SayXchangeMacBook:workflow user$ echo "name: CI/CD Pipeline
+> 
+> on:
+>   push:
+>     branches: [ "main" ]
+>   pull_request:
+>     branches: [ "main" ]
+> 
+> jobs:
+>   build:
+>     runs-on: ubuntu-latest
+>     services:
+>       mongo:
+>         image: mongo:6
+>         ports:
+>           - 27017:27017
+>         options: >-
+>           --health-cmd "mongosh --eval 'db.adminCommand(\"ping\")'"
+>           --health-interval 10s
+>           --health-timeout 5s
+>           --health-retries 5
+> 
+>     steps:
+>       - name: Checkout repository
+>         uses: actions/checkout@v3
+> 
+>       - name: Set up Node.js
+>         uses: actions/setup-node@v3
+>         with:
+>           node-version: 20
+> 
+>       - name: Install dependencies
+>         run: |
+>           cd backend
+>           npm install
+> 
+>       - name: Run tests
+>         run: |
+>           cd backend
+>           npm test || echo "No tests yet"
+> 
+>   docker:
+>     runs-on: ubuntu-latest
+>     needs: build
+> 
+>     steps:
+>       - name: Checkout repository
+>         uses: actions/checkout@v3
+> 
+>       - name: Log in to Docker Hub
+>         uses: docker/login-action@v2
+>         with:
+>           username: ${{ secrets.DOCKER_USERNAME }}
+>           password: ${{ secrets.DOCKER_PASSWORD }}
+> 
+>       - name: Build and push Docker image
+>         uses: docker/build-push-action@v3
+>         with:
+>           context: ./backend
+>           push: true
+>           tags: ${{ secrets.DOCKER_USERNAME }}/url-shortener:latest" > ci-cd.yml
+-bash: 
+
+  docker:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: ./backend
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/url-shortener:latest: bad substitution
+SayXchangeMacBook:workflow user$ cat ci-cd.yml
+SayXchangeMacBook:workflow user$ ls
+ci-cd.yml
+SayXchangeMacBook:workflow user$ cat ci-cd.yml
+SayXchangeMacBook:workflow user$ nano ci-cd.yml
+
+  UW PICO 5.09                             File: ci-cd.yml                              Modified  
+
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: ./backend
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/url-shortener:latest
+        
+          
+          
+          
+      
+        
+        
+          
+
+^G Get Help     ^O WriteOut     ^R Read File    ^Y Prev Pg      ^K Cut Text     ^C Cur Pos      
+^X Exit         ^J Justify      ^W Where is     ^V Next Pg      ^U UnCut Text   ^T To Spell     
